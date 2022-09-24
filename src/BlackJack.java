@@ -16,6 +16,10 @@ public class BlackJack extends CardGame {
         return winner;
     }
 
+    private void setWinner(Winner winner) {
+        this.winner = winner;
+    }
+
     public BlackJackPlayer getPlayer() {
         return player;
     }
@@ -24,9 +28,7 @@ public class BlackJack extends CardGame {
         return dealer;
     }
 
-    private void setWinner(Winner winner) {
-        this.winner = winner;
-    }
+
 
     public void dealCardWithHit(Player p) {
         dealCard(p);
@@ -50,12 +52,11 @@ public class BlackJack extends CardGame {
             return numberHits;
         }
 
-        public boolean isBust() {
-            return bust;
-        }
-
         private void setNumberHits(int numberHits) {
             this.numberHits = numberHits;
+        }
+        public boolean isBust() {
+            return bust;
         }
 
         private void setBust(boolean bust) {

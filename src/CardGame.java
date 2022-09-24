@@ -28,20 +28,20 @@ public abstract class CardGame {
             return rank;
         }
 
-        public String getSuit() {
-            return suit;
-        }
-
-        public int getScore() {
-            return score;
-        }
-
         private void setRank(String rank) {
             this.rank = rank;
         }
 
+        public String getSuit() {
+            return suit;
+        }
+
         private void setSuit(String suit) {
             this.suit = suit;
+        }
+
+        public int getScore() {
+            return score;
         }
 
         private void setScore(int score) {
