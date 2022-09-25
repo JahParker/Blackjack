@@ -5,10 +5,11 @@
 // Commenting your code is a significant part of your grade on this assignment.
 
 public class BlackJack extends CardGame {
-    enum Winner {DEALER, PLAYER, TIE}
-    private Winner winner;
-    static final int DEALER_HIT_STAY_THRESHOLD = 16;
+    final int DEALER_HIT_STAY_THRESHOLD = 16;
     static final String DEALER_NAME = "Dealer";
+    enum Winner {DEALER, PLAYER, TIE}
+
+    private Winner winner;
     private BlackJackPlayer player = new BlackJackPlayer();
     private BlackJackPlayer dealer = new BlackJackPlayer(DEALER_NAME);
 
@@ -27,7 +28,6 @@ public class BlackJack extends CardGame {
     public BlackJackPlayer getDealer() {
         return dealer;
     }
-
 
 
     public void dealCardWithHit(Player p) {
