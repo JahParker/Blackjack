@@ -1,10 +1,7 @@
-// Please remove all INSTRUCTION COMMENTS before submitting your
-//    project to Moodle.
-//
-// ALL code that you are instructed to write MUST BE COMMENTED by you.
-// Commenting your code is a significant part of your grade on this assignment.
-
-public class BlackJack extends CardGame {
+/**
+ * Represents the BlackJack cardgame
+ */
+public class BlackJackParker extends CardGameParker {
     final int DEALER_HIT_STAY_THRESHOLD = 16;
     static final String DEALER_NAME = "Dealer";
     enum Winner {DEALER, PLAYER, TIE}
@@ -16,7 +13,6 @@ public class BlackJack extends CardGame {
     public Winner getWinner() {
         return winner;
     }
-
     private void setWinner(Winner winner) {
         this.winner = winner;
     }
@@ -29,20 +25,35 @@ public class BlackJack extends CardGame {
         return dealer;
     }
 
-
+    /**
+     * Deals a new card to the player when they decide to hit
+     * @param p Player object
+     */
     public void dealCardWithHit(Player p) {
         dealCard(p);
     }
 
+    /**
+     * Decides who has won the game
+     * @param p The player that will be the user
+     * @param d The player that will be the dealer/CPU
+     */
     @Override
     public void determineOutcome(Player p, Player d) {
 
     }
 
-    public BlackJack(int numCards) {
+    /**
+     * Creates a BlackJackParker object with the specified number of cards
+     * @param numCards
+     */
+    public BlackJackParker(int numCards) {
         super(numCards);
     }
 
+    /**
+     * Represents a black jack player
+     */
     public static class BlackJackPlayer extends Player {
         static final int BUST_SCORE = 21;
         private int numberHits;
@@ -51,27 +62,37 @@ public class BlackJack extends CardGame {
         public int getNumberHits() {
             return numberHits;
         }
-
         private void setNumberHits(int numberHits) {
             this.numberHits = numberHits;
         }
+
         public boolean isBust() {
             return bust;
         }
-
         private void setBust(boolean bust) {
             this.bust = bust;
         }
 
+        /**
+         * Sets bust to false
+         * @return bust Will be changed to false  in this method
+         */
         public boolean checkBust() {
             boolean bust = false;
             return bust;
         }
 
+        /**
+         * Creates a BlackJackPlayer object
+         */
         public BlackJackPlayer() {
 
         }
 
+        /**
+         * Creates a BlackJackPlayer object with the specified name
+         * @param name Name of the player
+         */
         public BlackJackPlayer(String name) {
             super(name);
         }
