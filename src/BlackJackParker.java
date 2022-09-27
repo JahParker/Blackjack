@@ -1,5 +1,5 @@
 /**
- * Represents the BlackJack cardgame
+ * Represents the BlackJack card game
  */
 public class BlackJackParker extends CardGameParker {
     final int DEALER_HIT_STAY_THRESHOLD = 16;
@@ -55,7 +55,11 @@ public class BlackJackParker extends CardGameParker {
      * Represents a black jack player
      */
     public static class BlackJackPlayer extends Player {
+        // FIELDS:
+
         static final int BUST_SCORE = 21;
+
+        // The number of hits that the player takes
         private int numberHits;
         private boolean bust;
 
